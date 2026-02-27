@@ -1,11 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="lg">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: "Geist", sans-serif;
+      font-optical-sizing: auto;
+      background-color: #f9fafc;
+    }
+  </style>
+
+  <title>Job Tracker</title>
 </head>
-<body>
+<body class="min-h-screen mx-auto max-w-[90%] md:max-w-[70%]">
+
+  <header class="my-3 md:my-[60px]">
+
+    <h1 class="text-neutral font-bold text-[2rem] text-[#002C5C] mb-5">Job Application Tracker</h1>
+
+    <section class="alert-counter grid grid-cols-1 md:grid-cols-3 gap-4">
+
+
+      <div class="card bg-white border border-gray-100 shadow-sm rounded-xl">
+        <div class="card-body p-8">
+          <h2 class="text-sm font-bold text-gray-500 mb-2">TOTAL</h2>
+          <p id="total-count" class="text-4xl font-bold text-[#0F365F]">8</p>
+        </div>
+      </div>
+
+      <div class="card bg-white border border-gray-100 shadow-sm rounded-xl">
+        <div class="card-body p-8">
+          <h2 class="text-sm font-bold text-gray-500 mb-2">INTERVIEW</h2>
+          <p id="interview-count" class="text-4xl font-bold text-[#34A853]">0</p>
+        </div>
+      </div>
+
+      <div class="card bg-white border border-gray-100 shadow-sm rounded-xl">
+        <div class="card-body p-8">
+          <h2 class="text-sm font-bold text-gray-500 mb-2">REJECTED</h2>
+          <p id="rejected-count" class="text-4xl font-bold text-[#EA4335]">0</p>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="my-7 border-gray-300">
+
+  </header>
   
 </body>
 </html>
