@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
   <style>
-    * {
+    html {
       font-family: "Geist", sans-serif;
       font-optical-sizing: auto;
       background-color: #f9fafc;
@@ -70,11 +70,11 @@
 
     <div class="button-section flex gap-3">
 
-      <button class="w-20 btn btn-outline focus:!bg-[#3b82f6] focus:outline-none focus:border-none focus:text-white">All</button>
+      <button onclick="applyFilter('all')" id="all-btn" class="w-20 btn btn-outline focus:!bg-[#3b82f6] focus:outline-none focus:border-none focus:text-white">All</button>
 
-      <button class="btn btn-outline focus:!bg-[#3b82f6] focus:outline-none focus:border-none focus:text-white">Interview</button>
+      <button onclick="applyFilter('interview')" id="interview-btn" class="btn btn-outline focus:!bg-[#3b82f6] focus:outline-none focus:border-none focus:text-white">Interview</button>
 
-      <button class="btn btn-outline focus:!bg-[#3b82f6] focus:outline-none focus:border-none focus:text-white">Rejected</button>
+      <button onclick="applyFilter('reject')" id="reject-btn" class="btn btn-outline focus:!bg-[#3b82f6] focus:outline-none focus:border-none focus:text-white">Rejected</button>
 
     </div>
 
@@ -91,15 +91,15 @@
           <p class="font-regular text-[#64748B]">Remote  &#183; Full-time  &#183; $130,000 - $175,000</p>
 
           <div>
-            <button id="yes-status" class="btn btn-soft btn-success btn-active text-green-700 font-extrabold hidden">INTERVIEWED</button>
-            <button id="no-status" class="btn btn-soft btn-error btn-active text-red-700 font-extrabold hidden">REJECTED</button>
+            <button class="yes-status btn btn-soft btn-success btn-active text-green-900 font-extrabold hidden">INTERVIEWED</button>
+            <button class="no-status btn btn-soft btn-error btn-active text-red-900 font-extrabold hidden">REJECTED</button>
           </div>
 
           <p class="text-[#002C5C]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
           <div class="button-control flex gap-3 mt-3">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECT</button>
+            <button onclick="handleInterview(this)" class="btn btn-outline btn-success">INTERVIEW</button>
+            <button onclick="handleReject(this)" class="btn btn-outline btn-error">REJECT</button>
           </div>
 
         </div>
@@ -107,20 +107,20 @@
 
       <div id="card-2" class="card bg-base-100 shadow-sm">
         <div class="card-body">
-          <h2 class="card-title text-neutral font-semibold text-[1.125rem] text-[#002C5C]">Mobile First Corp</h2>
-          <p class="font-medium text-[#64748B] mb-2">React Native Developer</p>
-          <p class="font-regular text-[#64748B]">Remote  &#183; Full-time  &#183; $130,000 - $175,000</p>
+          <h2 class="card-title text-neutral font-semibold text-[1.125rem] text-[#002C5C]">WebFlow Agency</h2>
+          <p class="font-medium text-[#64748B] mb-2">Web Designer & Developer</p>
+          <p class="font-regular text-[#64748B]">Los Angeles, CA  &#183; Part-time &#183; $80,000 - $120,000</p>
 
           <div>
-            <button id="yes-status" class="btn btn-soft btn-success btn-active text-green-700 font-extrabold hidden">INTERVIEWED</button>
-            <button id="no-status" class="btn btn-soft btn-error btn-active text-red-700 font-extrabold hidden">REJECTED</button>
+            <button class="yes-status btn btn-soft btn-success btn-active text-green-900 font-extrabold hidden">INTERVIEWED</button>
+            <button class="no-status btn btn-soft btn-error btn-active text-red-900 font-extrabold hidden">REJECTED</button>
           </div>
 
-          <p class="text-[#002C5C]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+          <p class="text-[#002C5C]">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
 
           <div class="button-control flex gap-3 mt-3">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECT</button>
+            <button onclick="handleInterview(this)" class="btn btn-outline btn-success">INTERVIEW</button>
+            <button onclick="handleReject(this)" class="btn btn-outline btn-error">REJECT</button>
           </div>
 
         </div>
@@ -133,15 +133,15 @@
           <p class="font-regular text-[#64748B]">Remote  &#183; Full-time  &#183; $130,000 - $175,000</p>
 
           <div>
-            <button id="yes-status" class="btn btn-soft btn-success btn-active text-green-700 font-extrabold hidden">INTERVIEWED</button>
-            <button id="no-status" class="btn btn-soft btn-error btn-active text-red-700 font-extrabold hidden">REJECTED</button>
+            <button class="yes-status btn btn-soft btn-success btn-active text-green-900 font-extrabold hidden">INTERVIEWED</button>
+            <button class="no-status btn btn-soft btn-error btn-active text-red-900 font-extrabold hidden">REJECTED</button>
           </div>
 
           <p class="text-[#002C5C]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
           <div class="button-control flex gap-3 mt-3">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECT</button>
+            <button onclick="handleInterview(this)" class="btn btn-outline btn-success">INTERVIEW</button>
+            <button onclick="handleReject(this)" class="btn btn-outline btn-error">REJECT</button>
           </div>
 
         </div>
@@ -154,15 +154,15 @@
           <p class="font-regular text-[#64748B]">Remote  &#183; Full-time  &#183; $130,000 - $175,000</p>
 
           <div>
-            <button id="yes-status" class="btn btn-soft btn-success btn-active text-green-700 font-extrabold hidden">INTERVIEWED</button>
-            <button id="no-status" class="btn btn-soft btn-error btn-active text-red-700 font-extrabold hidden">REJECTED</button>
+            <button class="yes-status btn btn-soft btn-success btn-active text-green-900 font-extrabold hidden">INTERVIEWED</button>
+            <button class="no-status btn btn-soft btn-error btn-active text-red-900 font-extrabold hidden">REJECTED</button>
           </div>
 
           <p class="text-[#002C5C]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
           <div class="button-control flex gap-3 mt-3">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECT</button>
+            <button onclick="handleInterview(this)" class="btn btn-outline btn-success">INTERVIEW</button>
+            <button onclick="handleReject(this)" class="btn btn-outline btn-error">REJECT</button>
           </div>
 
         </div>
@@ -175,15 +175,15 @@
           <p class="font-regular text-[#64748B]">Remote  &#183; Full-time  &#183; $130,000 - $175,000</p>
 
           <div>
-            <button id="yes-status" class="btn btn-soft btn-success btn-active text-green-700 font-extrabold hidden">INTERVIEWED</button>
-            <button id="no-status" class="btn btn-soft btn-error btn-active text-red-700 font-extrabold hidden">REJECTED</button>
+            <button class="yes-status btn btn-soft btn-success btn-active text-green-900 font-extrabold hidden">INTERVIEWED</button>
+            <button class="no-status btn btn-soft btn-error btn-active text-red-900 font-extrabold hidden">REJECTED</button>
           </div>
 
           <p class="text-[#002C5C]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
           <div class="button-control flex gap-3 mt-3">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECT</button>
+            <button onclick="handleInterview(this)" class="btn btn-outline btn-success">INTERVIEW</button>
+            <button onclick="handleReject(this)" class="btn btn-outline btn-error">REJECT</button>
           </div>
 
         </div>
@@ -196,15 +196,15 @@
           <p class="font-regular text-[#64748B]">Remote  &#183; Full-time  &#183; $130,000 - $175,000</p>
 
           <div>
-            <button id="yes-status" class="btn btn-soft btn-success btn-active text-green-700 font-extrabold hidden">INTERVIEWED</button>
-            <button id="no-status" class="btn btn-soft btn-error btn-active text-red-700 font-extrabold hidden">REJECTED</button>
+            <button class="yes-status btn btn-soft btn-success btn-active text-green-900 font-extrabold hidden">INTERVIEWED</button>
+            <button class="no-status btn btn-soft btn-error btn-active text-red-900 font-extrabold hidden">REJECTED</button>
           </div>
 
           <p class="text-[#002C5C]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
           <div class="button-control flex gap-3 mt-3">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECT</button>
+            <button onclick="handleInterview(this)" class="btn btn-outline btn-success">INTERVIEW</button>
+            <button onclick="handleReject(this)" class="btn btn-outline btn-error">REJECT</button>
           </div>
 
         </div>
@@ -217,15 +217,15 @@
           <p class="font-regular text-[#64748B]">Remote  &#183; Full-time  &#183; $130,000 - $175,000</p>
 
           <div>
-            <button id="yes-status" class="btn btn-soft btn-success btn-active text-green-700 font-extrabold hidden">INTERVIEWED</button>
-            <button id="no-status" class="btn btn-soft btn-error btn-active text-red-700 font-extrabold hidden">REJECTED</button>
+            <button class="yes-status btn btn-soft btn-success btn-active text-green-900 font-extrabold hidden">INTERVIEWED</button>
+            <button class="no-status btn btn-soft btn-error btn-active text-red-900 font-extrabold hidden">REJECTED</button>
           </div>
 
           <p class="text-[#002C5C]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
           <div class="button-control flex gap-3 mt-3">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECT</button>
+            <button onclick="handleInterview(this)" class="btn btn-outline btn-success">INTERVIEW</button>
+            <button onclick="handleReject(this)" class="btn btn-outline btn-error">REJECT</button>
           </div>
 
         </div>
@@ -238,15 +238,15 @@
           <p class="font-regular text-[#64748B]">Remote  &#183; Full-time  &#183; $130,000 - $175,000</p>
 
           <div>
-            <button id="yes-status" class="btn btn-soft btn-success btn-active text-green-700 font-extrabold hidden">INTERVIEWED</button>
-            <button id="no-status" class="btn btn-soft btn-error btn-active text-red-700 font-extrabold hidden">REJECTED</button>
+            <button class="yes-status btn btn-soft btn-success btn-active text-green-900 font-extrabold hidden">INTERVIEWED</button>
+            <button class="no-status btn btn-soft btn-error btn-active text-red-900 font-extrabold hidden">REJECTED</button>
           </div>
 
           <p class="text-[#002C5C]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
           <div class="button-control flex gap-3 mt-3">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECT</button>
+            <button onclick="handleInterview(this)" class="btn btn-outline btn-success">INTERVIEW</button>
+            <button onclick="handleReject(this)" class="btn btn-outline btn-error">REJECT</button>
           </div>
 
         </div>
@@ -259,7 +259,26 @@
 
   </main>
 
+  <section id="empty-panel" class="empty-panel bg-white p-6 hidden">
+    <div class="rounded-lg h-[400px] bg-white flex flex-col items-center justify-center text-center">
+      
+      <div class="mb-4">
+        <img src="doc.png" alt="No jobs" class="w-20 h-20"> 
+      </div>
 
+      <h2 class="font-semibold text-[1.125rem] text-[#002C5C] mb-1">
+        No jobs available
+      </h2>
+      
+      <p class="font-medium text-[#64748B]">
+        Check back soon for new job opportunities
+      </p>
+
+    </div>
+  </section>
+
+  <script src="JS-script/method.js"></script>
+  <script src="JS-script/scripts.js"></script>
   
 </body>
 </html>
