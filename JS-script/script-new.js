@@ -5,54 +5,29 @@ const emptyPanel = document.getElementById("empty-panel");
 const statusCount = document.getElementById("job-count");
 let currentTab = "all";
 
-
-
 function switchTab(tab) {
   const tabs = ["all", "interview", "rejected"];
   currentTab = tab;
 
-  for (const t of tabs) {
-    const tabName = document.getElementById("tab-" + t);
-
-    if ( tab === t ) {
-      console.log (t + " tab is selected");
-    }
-    
-  }
-
   const pages = [allContainer, interviewContainer, rejectedContainer];
 
-  for ( const p of pages) {
+  for (const p of pages) {
     p.classList.add("hidden");
   }
-  
+
   emptyPanel.classList.add("hidden");
 
-  if ( tab === "all") {
+  if (tab === "all") {
     allContainer.classList.remove("hidden");
-    
-    if (jobCardContainer.children.length < 1) {
-      emptyPanel.classList.remove("hidden");
-    }
-  }
-  else if ( tab === "interview") {
+  } else if (tab === "interview") {
     interviewContainer.classList.remove("hidden");
-
-    if ((interviewContainer.children.length - 1) < 1) {
-      emptyPanel.classList.remove("hidden");
-    }
-  }
-  else {
+  } else {
     rejectedContainer.classList.remove("hidden");
-
-    if ((rejectedContainer.children.length - 1) < 1) {
-      emptyPanel.classList.remove("hidden");
-    }
   }
 
-
-  totalStat();
+  totalStat(); 
 }
+
 
 const totalCount = document.getElementById("total-count");
 const interviewCount = document.getElementById("interview-count");
@@ -100,13 +75,6 @@ document.
 
   function totalStat() {
     const jobCardContainer = document.getElementById("job-card");
-
-    // totalCount.innerText = jobCardContainer.children.length;
-
-    // interviewCount.innerText = interviewContainer.children.length - 1;
-
-    // rejectedCount.innerText = rejectedContainer.children.length - 1;
-
 
     const count = {
       all: jobCardContainer.children.length,
